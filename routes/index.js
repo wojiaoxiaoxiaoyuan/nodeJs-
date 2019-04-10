@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;
+module.exports = function (app) {
+  //一个get请求的路由  http://localhost:3000
+  app.get("/", function (req, res) {
+      res.render("index", {title:"育知同创abc"})
+  });
+  
+  //又一个请求路由：http://localhost:3000/abc
+  app.get("/abc", function (req, res) {
+      res.render("index", {title:"育知同创" + req.path})
+  });
+}
