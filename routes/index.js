@@ -1,4 +1,4 @@
 module.exports = app => {
-  // 测试服接口Test
-  app.get('/test', (req, res) => { require('./test')(req, res) })
+  // 用户注册接口
+  app.post('/register', (req, res) => { require('./register')(req, res) })
 }
